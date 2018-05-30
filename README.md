@@ -5,5 +5,5 @@ How to get working this App :
 2. Using command prompt traverse the location of cloned project on local machine.
 3. Using http-server command you will get an application url to access its functionality.
 4. Login Credentials are Username : admin and Password : password
-5. You'r application is ready to use.
+5. Your application is ready to use.
 
