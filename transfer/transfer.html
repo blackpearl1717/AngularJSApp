@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<body><center><h3>Payments Page</h3></center>
+  <div align="right"><a ui-sref="login">Logout</a></div>
+  <center>
+        <fieldset style="width: 300px">
+<form>
+  <table>
+    <tr>
+       <td>
+         <div class="form-group">
+           From Account:<select ng-model="selectedFromName" ng-options="x.accountID +'-' + x.Name for x in fromnames"></select>
+         </div>
+       </td>
+      <td>
+        <div class="form-group">
+          To Account: <select ng-model="selectedToName" ng-options="y.accountID +'-' + y.Name for y in tonames"></select>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+<table>
+  <tr>
+    <td>
+      <div class="form-group">
+        Amount: <input type="text" class="form-control" ng-model="amount" placeholder="amount" required=""/>
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        Remark: <input type="text" class="form-control" ng-model="remark" placeholder="remark" required=""/>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+
+  <center><p>Choose Transfer Mode</p></center>
+  </br>
+  IMPS <input type="radio" ng-model="myVar" value="imps">
+  NEFT <input type="radio" ng-model="myVar" value="neft">
+  RTGS <input type="radio" ng-model="myVar" value="rtgs">
+
+
+<div ng-switch="myVar">
+  <div ng-switch-when="imps">
+     <p>You Have Selected IMPS Transfer</p>
+  </div>
+  <div ng-switch-when="neft">
+     <p>You Have Selected NEFT Transfer</p>
+  </div>
+  <div ng-switch-when="rtgs">
+    <p>You Have Selected RTGS Transfer</p>
+  </div>
+</div>
+
+
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-success" value="Transferred" ng-click="onTransfer()">Transfer</button>
+      <span class="text-danger" style="color:red">{{ error }}</span>
+
+      <button type="submit" class="btn btn-success" value="Transferred" ng-click="onCancel()">Cancel</button>
+      <span class="text-danger" style="color:red">{{ error }}</span></br>
+      <span ng-bind="Message"></span>
+    </div>
+</fieldset>
+</form>
+</center>
+</body>
+
+
+</html>
